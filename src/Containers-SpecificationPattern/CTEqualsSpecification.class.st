@@ -1,25 +1,25 @@
 Class {
-	#name : #EqualsSpecification,
-	#superclass : #ValueBoundSpecification,
+	#name : #CTEqualsSpecification,
+	#superclass : #CTValueBoundSpecification,
 	#category : #'Containers-SpecificationPattern'
 }
 
 { #category : #subsuming }
-EqualsSpecification >> isGeneralizationOfValueBoundSpecification: aValueBoundWithSameNameSpecification [ 
+CTEqualsSpecification >> isGeneralizationOfValueBoundSpecification: aValueBoundWithSameNameSpecification [ 
 	^ aValueBoundWithSameNameSpecification isSpecialCaseOfEqualSpecification: self . 
 ]
 
 { #category : #satisfaction }
-EqualsSpecification >> isSatisfiedBy: aCandidate [ 
+CTEqualsSpecification >> isSatisfiedBy: aCandidate [ 
 	^ (aCandidate perform: attributeName) = value .
 ]
 
 { #category : #subsuming }
-EqualsSpecification >> isSpecialCaseOfEqualSpecification: anEqualSpecification [
+CTEqualsSpecification >> isSpecialCaseOfEqualSpecification: anEqualSpecification [
 	^ self magnitude = anEqualSpecification magnitude .
 ]
 
 { #category : #subsuming }
-EqualsSpecification >> isSpecialCaseOfLessThanSpecification: aLessThanSpecification [
+CTEqualsSpecification >> isSpecialCaseOfLessThanSpecification: aLessThanSpecification [
 	^ self magnitude <= aLessThanSpecification magnitude .
 ]

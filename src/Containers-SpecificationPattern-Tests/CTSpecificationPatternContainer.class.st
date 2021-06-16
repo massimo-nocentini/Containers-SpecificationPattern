@@ -1,5 +1,5 @@
 Class {
-	#name : #Container,
+	#name : #CTSpecificationPatternContainer,
 	#superclass : #Object,
 	#instVars : [
 		'workingTemperatureInterval',
@@ -9,22 +9,22 @@ Class {
 }
 
 { #category : #testing }
-Container >> canMaintainTemperatureBelow: aTemperature [
+CTSpecificationPatternContainer >> canMaintainTemperatureBelow: aTemperature [
 	^ workingTemperatureInterval last <= aTemperature
 ]
 
 { #category : #testing }
-Container >> isSanitaryForFood [
+CTSpecificationPatternContainer >> isSanitaryForFood [
 	^ isSanitaryForFood
 ]
 
 { #category : #accessing }
-Container >> maxWorkingTemperature [
+CTSpecificationPatternContainer >> maxWorkingTemperature [
 	^ workingTemperatureInterval last .
 ]
 
 { #category : #private }
-Container >> workingTemperatureInterval: anInterval isSanitaryForFood: aBoolean [ 
+CTSpecificationPatternContainer >> workingTemperatureInterval: anInterval isSanitaryForFood: aBoolean [ 
 	workingTemperatureInterval := anInterval .
 	isSanitaryForFood := aBoolean .
 ]

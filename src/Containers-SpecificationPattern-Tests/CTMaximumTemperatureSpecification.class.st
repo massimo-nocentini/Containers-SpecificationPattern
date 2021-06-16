@@ -1,6 +1,6 @@
 Class {
-	#name : #MaximumTemperatureSpecification,
-	#superclass : #Specification,
+	#name : #CTMaximumTemperatureSpecification,
+	#superclass : #CTSpecification,
 	#instVars : [
 		'maxTemperatureAllowed'
 	],
@@ -8,11 +8,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-MaximumTemperatureSpecification >> isSatisfiedBy: aContainer [ 
+CTMaximumTemperatureSpecification >> isSatisfiedBy: aContainer [ 
 	^ aContainer canMaintainTemperatureBelow: maxTemperatureAllowed 
 ]
 
 { #category : #private }
-MaximumTemperatureSpecification >> maxTemperatureAllowed: aTemperature [ 
+CTMaximumTemperatureSpecification >> maxTemperatureAllowed: aTemperature [ 
 	maxTemperatureAllowed := aTemperature
 ]

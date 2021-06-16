@@ -1,20 +1,20 @@
 Class {
-	#name : #LessThanSpecification,
-	#superclass : #ValueBoundSpecification,
+	#name : #CTLessThanSpecification,
+	#superclass : #CTValueBoundSpecification,
 	#category : #'Containers-SpecificationPattern'
 }
 
 { #category : #subsuming }
-LessThanSpecification >> isGeneralizationOfValueBoundSpecification: aValueBoundWithSameNameSpecification [
+CTLessThanSpecification >> isGeneralizationOfValueBoundSpecification: aValueBoundWithSameNameSpecification [
 	^ aValueBoundWithSameNameSpecification isSpecialCaseOfLessThanSpecification: self .
 ]
 
 { #category : #satisfaction }
-LessThanSpecification >> isSatisfiedBy: aCandidate [ 
+CTLessThanSpecification >> isSatisfiedBy: aCandidate [ 
 	^ (aCandidate perform: attributeName ) < value .
 ]
 
 { #category : #subsuming }
-LessThanSpecification >> isSpecialCaseOfLessThanSpecification: aLessThanSpecification [
+CTLessThanSpecification >> isSpecialCaseOfLessThanSpecification: aLessThanSpecification [
 	^ self magnitude <= aLessThanSpecification magnitude .
 ]

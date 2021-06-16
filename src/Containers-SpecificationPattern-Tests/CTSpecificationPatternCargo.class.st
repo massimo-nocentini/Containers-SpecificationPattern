@@ -1,5 +1,5 @@
 Class {
-	#name : #Cargo,
+	#name : #CTSpecificationPatternCargo,
 	#superclass : #Object,
 	#instVars : [
 		'specification'
@@ -8,11 +8,11 @@ Class {
 }
 
 { #category : #testing }
-Cargo >> canBePutInto: aContainer [ 
+CTSpecificationPatternCargo >> canBePutInto: aContainer [ 
 	^ specification isSatisfiedBy: aContainer 
 ]
 
 { #category : #private }
-Cargo >> specification: aSpecification [ 
+CTSpecificationPatternCargo >> specification: aSpecification [ 
 	specification := aSpecification 
 ]

@@ -1,6 +1,6 @@
 Class {
-	#name : #ValueBoundSpecification,
-	#superclass : #Specification,
+	#name : #CTValueBoundSpecification,
+	#superclass : #CTSpecification,
 	#instVars : [
 		'attributeName',
 		'value'
@@ -9,39 +9,39 @@ Class {
 }
 
 { #category : #accessing }
-ValueBoundSpecification >> attributeName [
+CTValueBoundSpecification >> attributeName [
 	^ attributeName .
 ]
 
 { #category : #private }
-ValueBoundSpecification >> attributeName: aName magnitude: aValue [ 
+CTValueBoundSpecification >> attributeName: aName magnitude: aValue [ 
 	attributeName := aName . 
 	value := aValue .  
 	^ self .
 ]
 
 { #category : #subsuming }
-ValueBoundSpecification >> isGeneralizationOf: aSpecification [ 
+CTValueBoundSpecification >> isGeneralizationOf: aSpecification [ 
 	^ aSpecification isSpecialCaseOfValueBoundSpecification: self .
 ]
 
 { #category : #subsuming }
-ValueBoundSpecification >> isGeneralizationOfValueBoundSpecification: aSpecification [ 
+CTValueBoundSpecification >> isGeneralizationOfValueBoundSpecification: aSpecification [ 
 	self subclassResponsibility .
 ]
 
 { #category : #subsuming }
-ValueBoundSpecification >> isSpecialCaseOfValueBoundSpecification: aValueBoundSpecification [ 
+CTValueBoundSpecification >> isSpecialCaseOfValueBoundSpecification: aValueBoundSpecification [ 
 	^ (attributeName = aValueBoundSpecification attributeName  ) and: 
 		[ self isSpecialCaseOfValueBoundWithSameNameSpecification: aValueBoundSpecification ] . 
 ]
 
 { #category : #subsuming }
-ValueBoundSpecification >> isSpecialCaseOfValueBoundWithSameNameSpecification: aValueBoundWithSameNameSpecification [ 
+CTValueBoundSpecification >> isSpecialCaseOfValueBoundWithSameNameSpecification: aValueBoundWithSameNameSpecification [ 
 	^ aValueBoundWithSameNameSpecification isGeneralizationOfValueBoundSpecification: self .
 ]
 
 { #category : #accessing }
-ValueBoundSpecification >> magnitude [
+CTValueBoundSpecification >> magnitude [
 	^ value .
 ]

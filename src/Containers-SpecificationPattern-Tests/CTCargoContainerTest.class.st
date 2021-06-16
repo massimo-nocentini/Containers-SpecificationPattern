@@ -1,5 +1,5 @@
 Class {
-	#name : #CargoContainerTest,
+	#name : #CTCargoContainerTest,
 	#superclass : #TestCase,
 	#instVars : [
 		'cargo',
@@ -9,20 +9,20 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-CargoContainerTest >> setUp [ 
-	cargo := Cargo new .
-	container := Container new . 
+CTCargoContainerTest >> setUp [ 
+	cargo := CTSpecificationPatternCargo new .
+	container := CTSpecificationPatternContainer new . 
 ]
 
 { #category : #'composite specifications' }
-CargoContainerTest >> testConjunctionOfTwoSpecifications [
+CTCargoContainerTest >> testConjunctionOfTwoSpecifications [
 
 	|firstSpec secondSpec conjSpec|
 	
-	firstSpec := MaximumTemperatureSpecification new .
+	firstSpec := CTMaximumTemperatureSpecification new .
 	firstSpec maxTemperatureAllowed: -2 .
 	
-	secondSpec := SanitaryForFoodSpecification new .
+	secondSpec := CTSanitaryForFoodSpecification new .
 	
 	conjSpec := firstSpec and: secondSpec .
 	
@@ -42,12 +42,12 @@ CargoContainerTest >> testConjunctionOfTwoSpecifications [
 ]
 
 { #category : #'using spec framework' }
-CargoContainerTest >> testConjunctionOfTwoSpecificationsUsingDSL [
+CTCargoContainerTest >> testConjunctionOfTwoSpecificationsUsingDSL [
 
 	| conjSpec |
 	
-	conjSpec := (Specification attributeNamed: #isSanitaryForFood isEquals: true)
-		and: (Specification attributeNamed: #maxWorkingTemperature isLessThan: -1).
+	conjSpec := (CTSpecification attributeNamed: #isSanitaryForFood isEquals: true)
+		and: (CTSpecification attributeNamed: #maxWorkingTemperature isLessThan: -1).
 	cargo specification: conjSpec.
 	
 	container workingTemperatureInterval: (-6 to: -3) isSanitaryForFood: true.
@@ -64,14 +64,14 @@ CargoContainerTest >> testConjunctionOfTwoSpecificationsUsingDSL [
 ]
 
 { #category : #'composite specifications' }
-CargoContainerTest >> testDisjunctionOfTwoSpecifications [
+CTCargoContainerTest >> testDisjunctionOfTwoSpecifications [
 
 	|firstSpec secondSpec disjSpec|
 	
-	firstSpec := MaximumTemperatureSpecification new .
+	firstSpec := CTMaximumTemperatureSpecification new .
 	firstSpec maxTemperatureAllowed: -2 .
 	
-	secondSpec := SanitaryForFoodSpecification new .
+	secondSpec := CTSanitaryForFoodSpecification new .
 	
 	disjSpec := firstSpec or: secondSpec .
 	
@@ -91,12 +91,12 @@ CargoContainerTest >> testDisjunctionOfTwoSpecifications [
 ]
 
 { #category : #'composite specifications' }
-CargoContainerTest >> testDisjunctionOfTwoSpecificationsUsingDSL [
+CTCargoContainerTest >> testDisjunctionOfTwoSpecificationsUsingDSL [
 
 	| disjSpec |
 	
-	disjSpec := (Specification attributeNamed: #isSanitaryForFood isEquals: true)
-		or: (Specification attributeNamed: #maxWorkingTemperature isLessThan: -1).
+	disjSpec := (CTSpecification attributeNamed: #isSanitaryForFood isEquals: true)
+		or: (CTSpecification attributeNamed: #maxWorkingTemperature isLessThan: -1).
 	cargo specification: disjSpec.
 	
 	container workingTemperatureInterval: (-6 to: -3) isSanitaryForFood: true .
@@ -113,9 +113,9 @@ CargoContainerTest >> testDisjunctionOfTwoSpecificationsUsingDSL [
 ]
 
 { #category : #'using domain specifications' }
-CargoContainerTest >> testIsSanitaryForFoodSpecificationSatisfied [
+CTCargoContainerTest >> testIsSanitaryForFoodSpecificationSatisfied [
 	| specification |
-	specification := SanitaryForFoodSpecification new.
+	specification := CTSanitaryForFoodSpecification new.
 	cargo specification: specification.
 	container workingTemperatureInterval: (-6 to: -3) isSanitaryForFood: true.
 	self assert: (cargo canBePutInto: container).
@@ -125,10 +125,10 @@ CargoContainerTest >> testIsSanitaryForFoodSpecificationSatisfied [
 ]
 
 { #category : #'using domain specifications' }
-CargoContainerTest >> testMaximumTemperatureSpecificationNotSatisfied [
+CTCargoContainerTest >> testMaximumTemperatureSpecificationNotSatisfied [
 
 	| specification |
-	specification := MaximumTemperatureSpecification new .
+	specification := CTMaximumTemperatureSpecification new .
 	specification maxTemperatureAllowed: -2 .
 	
 	cargo specification: specification .
@@ -138,10 +138,10 @@ CargoContainerTest >> testMaximumTemperatureSpecificationNotSatisfied [
 ]
 
 { #category : #'using domain specifications' }
-CargoContainerTest >> testMaximumTemperatureSpecificationSatisfaction [
+CTCargoContainerTest >> testMaximumTemperatureSpecificationSatisfaction [
 
 	| specification |
-	specification := MaximumTemperatureSpecification new .
+	specification := CTMaximumTemperatureSpecification new .
 	specification maxTemperatureAllowed: -2 .
 	
 	cargo specification: specification .

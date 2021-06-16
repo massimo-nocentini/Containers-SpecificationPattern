@@ -1,10 +1,10 @@
 Class {
-	#name : #SanitaryForFoodSpecification,
-	#superclass : #Specification,
+	#name : #CTSanitaryForFoodSpecification,
+	#superclass : #CTSpecification,
 	#category : #'Containers-SpecificationPattern-Tests'
 }
 
 { #category : #'as yet unclassified' }
-SanitaryForFoodSpecification >> isSatisfiedBy: aContainer [ 
+CTSanitaryForFoodSpecification >> isSatisfiedBy: aContainer [ 
 	^ aContainer isSanitaryForFood
 ]

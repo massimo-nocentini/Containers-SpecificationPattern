@@ -1,6 +1,6 @@
 Class {
-	#name : #DisjunctionSpecification,
-	#superclass : #Specification,
+	#name : #CTDisjunctionSpecification,
+	#superclass : #CTSpecification,
 	#instVars : [
 		'anotherSpecification',
 		'specification'
@@ -9,19 +9,19 @@ Class {
 }
 
 { #category : #subsuming }
-DisjunctionSpecification >> isGeneralizationOf: aSpecification [
+CTDisjunctionSpecification >> isGeneralizationOf: aSpecification [
 	"True if some component is subsumed. False if all component is not subsumed."
 	^ (specification isGeneralizationOf: aSpecification ) or: 
 		[ anotherSpecification isGeneralizationOf: aSpecification  ] .
 ]
 
 { #category : #satisfaction }
-DisjunctionSpecification >> isSatisfiedBy: aCandidate [ 
+CTDisjunctionSpecification >> isSatisfiedBy: aCandidate [ 
 	^ (specification isSatisfiedBy: aCandidate ) or: [ anotherSpecification isSatisfiedBy: aCandidate  ]
 ]
 
 { #category : #'composite creation' }
-DisjunctionSpecification >> spec: aSpec anotherSpec: anotherSpec [ 
+CTDisjunctionSpecification >> spec: aSpec anotherSpec: anotherSpec [ 
 	specification := aSpec .
 	anotherSpecification := anotherSpec . 
 ]
