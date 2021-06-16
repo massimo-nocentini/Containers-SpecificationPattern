@@ -5,7 +5,7 @@ Class {
 		'workingTemperatureInterval',
 		'isSanitaryForFood'
 	],
-	#category : #'SpecificationPattern-Tests'
+	#category : #'Containers-SpecificationPattern-Tests'
 }
 
 { #category : #testing }

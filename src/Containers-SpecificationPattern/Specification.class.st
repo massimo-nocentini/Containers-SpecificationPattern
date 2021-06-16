@@ -4,7 +4,7 @@ I'm the abstract class in order to catch the concept of a specification object. 
 Class {
 	#name : #Specification,
 	#superclass : #Object,
-	#category : #SpecificationPattern
+	#category : #'Containers-SpecificationPattern'
 }
 
 { #category : #'instance creation' }

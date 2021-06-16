@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'maxTemperatureAllowed'
 	],
-	#category : #'SpecificationPattern-Tests'
+	#category : #'Containers-SpecificationPattern-Tests'
 }
 
 { #category : #'as yet unclassified' }

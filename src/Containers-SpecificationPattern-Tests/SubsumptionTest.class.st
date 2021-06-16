@@ -1,7 +1,7 @@
 Class {
 	#name : #SubsumptionTest,
 	#superclass : #TestCase,
-	#category : #'SpecificationPattern-Tests'
+	#category : #'Containers-SpecificationPattern-Tests'
 }
 
 { #category : #'as yet unclassified' }

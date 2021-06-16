@@ -5,7 +5,7 @@ Class {
 		'specification',
 		'anotherSpecification'
 	],
-	#category : #SpecificationPattern
+	#category : #'Containers-SpecificationPattern'
 }
 
 { #category : #'instance creation' }

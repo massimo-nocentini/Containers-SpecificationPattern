@@ -1,7 +1,7 @@
 Class {
 	#name : #SanitaryForFoodSpecification,
 	#superclass : #Specification,
-	#category : #'SpecificationPattern-Tests'
+	#category : #'Containers-SpecificationPattern-Tests'
 }
 
 { #category : #'as yet unclassified' }

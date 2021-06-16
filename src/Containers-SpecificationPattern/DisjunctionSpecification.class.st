@@ -5,7 +5,7 @@ Class {
 		'anotherSpecification',
 		'specification'
 	],
-	#category : #SpecificationPattern
+	#category : #'Containers-SpecificationPattern'
 }
 
 { #category : #subsuming }

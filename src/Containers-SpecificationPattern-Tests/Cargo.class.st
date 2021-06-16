@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'specification'
 	],
-	#category : #'SpecificationPattern-Tests'
+	#category : #'Containers-SpecificationPattern-Tests'
 }
 
 { #category : #testing }

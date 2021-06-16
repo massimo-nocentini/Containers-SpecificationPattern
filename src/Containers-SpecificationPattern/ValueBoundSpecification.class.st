@@ -5,7 +5,7 @@ Class {
 		'attributeName',
 		'value'
 	],
-	#category : #SpecificationPattern
+	#category : #'Containers-SpecificationPattern'
 }
 
 { #category : #accessing }

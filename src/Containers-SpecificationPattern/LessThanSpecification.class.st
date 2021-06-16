@@ -1,7 +1,7 @@
 Class {
 	#name : #LessThanSpecification,
 	#superclass : #ValueBoundSpecification,
-	#category : #SpecificationPattern
+	#category : #'Containers-SpecificationPattern'
 }
 
 { #category : #subsuming }
